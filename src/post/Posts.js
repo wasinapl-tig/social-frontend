@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {list} from './apiPost';
-import DefaultProfile from '../images/moutain.jpg';
+import DefaultProfile from './images/moutain.jpg';
 import { Link } from 'react-router-dom';
  class Posts extends Component {
      constructor(){

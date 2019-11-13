@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "./static/js/main.10cde7c2.chunk.js",
-    "main.js.map": "./static/js/main.10cde7c2.chunk.js.map",
+    "main.js": "./static/js/main.479d5992.chunk.js",
+    "main.js.map": "./static/js/main.479d5992.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.d82e3627.js",
     "runtime-main.js.map": "./static/js/runtime-main.d82e3627.js.map",
-    "static/js/2.0ec633fd.chunk.js": "./static/js/2.0ec633fd.chunk.js",
-    "static/js/2.0ec633fd.chunk.js.map": "./static/js/2.0ec633fd.chunk.js.map",
+    "static/js/2.282552df.chunk.js": "./static/js/2.282552df.chunk.js",
+    "static/js/2.282552df.chunk.js.map": "./static/js/2.282552df.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.52b43eca1637cc26559fee63060b084e.js": "./precache-manifest.52b43eca1637cc26559fee63060b084e.js",
+    "precache-manifest.66ca2edb4b2fa93b0878c4e0ab3a44c2.js": "./precache-manifest.66ca2edb4b2fa93b0878c4e0ab3a44c2.js",
     "service-worker.js": "./service-worker.js",
     "static/media/moutain.jpg": "./static/media/moutain.3868e2cb.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d82e3627.js",
-    "static/js/2.0ec633fd.chunk.js",
-    "static/js/main.10cde7c2.chunk.js"
+    "static/js/2.282552df.chunk.js",
+    "static/js/main.479d5992.chunk.js"
   ]
 }
