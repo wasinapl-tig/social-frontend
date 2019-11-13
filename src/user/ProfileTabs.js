@@ -45,9 +45,9 @@ class ProfileTabs extends Component {
 
                       <div className="col-md-4">
                                 <h3 className="text-primary">
-                                followers</h3>
+                                following</h3>
                                 <hr />
-                                    {followers.map((person,i)=>(
+                                    {following.map((person,i)=>(
                                         <div key={i}>
                                             <div >
                                                     <Link to={`/user/${person._id}`}>
@@ -90,10 +90,11 @@ class ProfileTabs extends Component {
                                                     </div>
                                                     </Link>
                                                             {/* <p style={{clear:'both'}}>{person.about}</p> */}
-                                                     
+                                                    
                                         </div>
                                         </div>
                                         ))}
+
                               </div>
                             
                    </div>

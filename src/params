@@ -1,0 +1,3 @@
+REACT_APP_API_URL=http://23.97.58.232:3005/apisocial
+REACT_APP_API_URL=http://localhost:3001/apisocial
+CLIENT_URL=http://localhost:3000
