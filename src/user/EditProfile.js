@@ -15,7 +15,8 @@ import DefaultProfile from '../images/avatar.png';
                     error:"",
                     fileSize:0,
                     loading:false,
-                    about:""
+                    about:"",
+                    adminId:""
          };
      }
 
@@ -34,18 +35,19 @@ import DefaultProfile from '../images/avatar.png';
     clickSubmit = event => {
 
          event.preventDefault();
-         this.setState({loading:true});
+         this.setState({loading:true,adminId:isAuthenticated().user._id});
         if(this.isValid())
         {
         // const {name,email,password} =this.state;
 
-       const userId=this.props.match.params.userId;
+        const userId=this.props.match.params.userId;
         const token =isAuthenticated().token;
 
         update(userId,token,this.userData).then(data=>{
             if(data.error) this.setState({ error:data.error })
             else 
             updateUser(data,()=>{
+               
                      this.setState({ redirectToProfile:true})
             });
            
@@ -69,7 +71,9 @@ import DefaultProfile from '../images/avatar.png';
     }
     componentDidMount() {
         this.userData = new FormData();
+       
         const userId =  this.props.match.params.userId;
+     
         this.init(userId);
     
     }
@@ -126,9 +130,13 @@ import DefaultProfile from '../images/avatar.png';
                             </form>
     );
     render() {
-        const {id,name,email,password,redirectToProfile,error,loading,about} =this.state;
+        // console.log(isAuthenticated().user);
+        const {id,name,email,password,redirectToProfile,error,loading,about,adminId} =this.state;
+        // console.log("ADMIN UID",adminId);
         if(redirectToProfile){
-            return <Redirect to={`/user/${id}`}/>
+      
+             return <Redirect to={`/user/${id}`}/>
+           
         }
         const photoUrl= id ? `${process.env.REACT_APP_API_URL}/user/photo/${id}?${new Date().getTime()}`: DefaultProfile;
         return (
@@ -138,7 +146,10 @@ import DefaultProfile from '../images/avatar.png';
                             {loading ? <div className="jumbotron text-center"> <h2>Loading...</h2> </div>:""}   
                     
                       <img style={{height:"200px",width:"auto"}} className="img-thumbnail" src={photoUrl} onError={(i=>(i.target.src=`${DefaultProfile}`))} alt={name}/>
-                      {this.signupForm(name,email,password,about)}
+                      {/* {this.signupForm(name,email,password,about)} */}
+                    {/* {JSON.stringify(isAuthenticated().user.role)} */}
+                      {isAuthenticated().user.role === "admin" &&
+                  this.signupForm(name, email, password, about)}
             </div>
         )
     }

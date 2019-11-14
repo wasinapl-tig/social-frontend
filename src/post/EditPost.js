@@ -125,7 +125,11 @@ class EditPost extends Component {
                             {loading ? <div className="jumbotron text-center"> <h2>Loading...</h2> </div>:""}  
 
                        <img style={{height:"200px",width:"auto"}} className="img-thumbnail" src={`${process.env.REACT_APP_API_URL}/post/photo/${id}`} onError={(i=>(i.target.src=`${DefaultProfile}`))} alt={title}/>
-                    {this.editPostForm(title,body)}
+                    {/* {this.editPostForm(title,body)} */}
+
+                    {isAuthenticated().user.role === "admin" ||
+    (isAuthenticated().user._id === id &&
+        this.editPostForm(title, body))}
             </div>
         )
     }
